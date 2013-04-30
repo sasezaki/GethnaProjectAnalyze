@@ -19,9 +19,10 @@ class GithubController extends AbstractActionController
             throw new \RuntimeException('You can only use this action from the console!');
         }
 
-        //var_dump($github);
+        $params = $this->request->getParams();
 
-        //$githubClient->api('repos')->contributors('zendframework', 'zf2');
+        $github->storeContributors($params->owner, $params->repo);
+        //$ = $githubClient->api('repos')->contributors($contributors, $);
         //var_dump($githubClient);
     }
 }

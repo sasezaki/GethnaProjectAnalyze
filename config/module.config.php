@@ -5,7 +5,7 @@ return array(
             'routes' => array(
                 'projectanalyze' => array(
                     'options' => array(
-                        'route' => 'projectanalyze debug',
+                        'route' => 'projectanalyze debug --owner= --repo=',
                         'defaults' => array(
                             'controller' => 'GethnaProjectAnalyze\Controller\Github',
                             'action'     => 'debug',
@@ -24,14 +24,13 @@ return array(
                 'name' => 'filesystem',
                 'options' => array(
                     'cache_dir' => realpath('./data/cache'),
-                    'writable' => false,
+                    //'writable' => false,
                 ),
             ),
             'plugins' => array(
                 'exception_handler' => array('throw_exceptions' => true),
-                'serializer'
             )
         ),
-        'cache_key' => 'gethna-projectanalyze',
+        'cache_key' => 'gethna-project-analyze',
     ),
 );
